@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <style>
+    /***DEFAULT***/
+    *{
+      color: white;
+    }
+
+    body {
+      line-height: 2.5em;
+      background-color: #222;
+    }
+
+    /***GRID***/
+    #cuadricula {
+      display: grid;
+      width: 950px;
+      height: 350px;
+      grid-template-columns: repeat(5, auto);
+      grid-template-areas:
+        "a b c d e"
+        "f g h i j"
+        "k l m n o";
+      grid-column-gap: var(--valorCol);
+      grid-row-gap: var(--valorRow);
+      border: 1px dashed #777;
+    }
+
+    .item {
+      padding: 1em;
+      border: 1px solid #000;
+      border-radius: 10px;
+      background-color: var(--color);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="wrapper">
+    <div id="gridGaps" class="range">
+      <p>
+        <label>grid-rows-gap: <span>1</span>px;</label>
+        <input type="range" name="gridRowGap" min="0" max="20" value="1">
+      <p>
+      <p>
+        <label>grid-column-gap: <span>1</span>px;</label>
+        <input type="range" name="gridColumnGap" min="0" max="20" value="1">
+      <p>
+      <p style="display:inline; white-space: nowrap;">grid-gap: <span id="spangridRowGap">1</span>px <span
+          id="spangridColumnGap">1</span>px;</p>
+    </div>
+
+    <div id="cuadricula">
+      <div class="item" style="--color:#3E989B;">
+        <p>1</p>
+      </div>
+      <div class="item" style="--color:#6DB465;">
+        <p>2</p>
+      </div>
+      <div class="item" style="--color:#F2C14E;">
+        <p>3</p>
+      </div>
+      <div class="item" style="--color:#F78154;">
+        <p>4</p>
+      </div>
+      <div class="item" style="--color:#C87694;">
+        <p>5</p>
+      </div>
+      <div class="item" style="--color:#3E989B;">
+        <p>6</p>
+      </div>
+      <div class="item" style="--color:#6DB465;">
+        <p>7</p>
+      </div>
+      <div class="item" style="--color:#F2C14E;">
+        <p>8</p>
+      </div>
+      <div class="item" style="--color:#F78154;">
+        <p>9</p>
+      </div>
+      <div class="item" style="--color:#C87694;">
+        <p>10</p>
+      </div>
+      <div class="item" style="--color:#3E989B;">
+        <p>11</p>
+      </div>
+      <div class="item" style="--color:#6DB465;">
+        <p>12</p>
+      </div>
+      <div class="item" style="--color:#F2C14E;">
+        <p>13</p>
+      </div>
+      <div class="item" style="--color:#F78154;">
+        <p>14</p>
+      </div>
+      <div class="item" style="--color:#C87694;">
+        <p>15</p>
+      </div>
+    </div>
+  </div>
+
+<script>
+  const gridRowGap = document.querySelector('input[name="gridRowGap"]');
+  const gridColumnGap = document.querySelector('input[name="gridColumnGap"]');
+  const spangridRowGap = document.getElementById('spangridRowGap');
+  const spangridColumnGap = document.getElementById('spangridColumnGap');
+  const cuadricula = document.getElementById('cuadricula');
+
+  gridRowGap.addEventListener('input', () => {
+    cuadricula.style.setProperty('--valorRow', gridRowGap.value + 'px');
+    spangridRowGap.textContent = gridRowGap.value;
+  });
+
+  gridColumnGap.addEventListener('input', () => {
+    cuadricula.style.setProperty('--valorCol', gridColumnGap.value + 'px');
+    spangridColumnGap.textContent = gridColumnGap.value;
+  });
+</script>
+</body>
+
+</html>

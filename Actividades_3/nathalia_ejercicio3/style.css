@@ -1,0 +1,170 @@
+/*DEFAULT*/
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+#pagewrap{
+    background: black url(images/body-bg.jpg) no-repeat center;
+    background-size: cover;
+    width: 100%;
+}
+
+/***HEADER***/
+#header{
+    display: flex;
+    margin: 0 10% 35px 10%;
+    height: 160px;
+    flex-direction: column;
+}
+
+#site-logo > a, #main-nav a, #site-description {
+    color: white;
+}
+
+#site-logo{
+    width: 100px;
+    margin: 25px 10px 10px 25px;
+}
+
+#site-description{
+    font-style: italic;
+    font-size: 15px;
+    font-weight: lighter;
+    margin: 0 10px 10px 25px;
+}
+
+nav{
+    background: linear-gradient(to right, rgb(106, 106, 106), rgb(195, 195, 195));
+    width: 97%;
+    height: 60px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 5px 5px 20px 2px black;
+    position: relative;
+}
+
+#main-nav li{
+    display: inline-block;
+    padding: 5px;
+    margin-left: 30px;
+    border-radius: 5px;
+}
+
+#main-nav a{
+    text-shadow: -1px -1px 0px black;
+    font-size: 15px;
+}
+
+#main-nav li:hover{
+    background-color: rgb(0, 0, 139, 0.5);
+}
+
+/***BARRA DE BUSQUEDA***/
+#searchform{
+    position: absolute;
+    right: 15px;
+    top: 25%;
+}
+
+#searchform input[type="search"]{
+    padding: 5px 10px;
+    border: 1px solid rgb(106, 106, 106);
+    border-radius: 5px;
+}
+
+/***MAIN***/
+
+#content{
+    width: 670px;
+    padding: 20px 40px;
+    margin-left: 11.5%;
+    background-color: white;
+    border: 1px solid rgb(106, 106, 106);
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px 2px black;
+    float: left;
+}
+
+/***CONTENT HEADER***/
+#content header > h1{
+    padding-bottom: 10px;
+}
+
+#content header > h1 a{
+    color: black;
+}
+
+#content header p > a, .widget ul a{
+    color: royalblue;
+}
+
+#content header p > a:hover, .widget ul a:hover{
+    color: rgb(8, 8, 255);
+}
+
+#content header .post-date{
+    color: grey;
+}
+
+#content header{
+    margin-bottom: 10px;
+}
+
+/***IMAGEN***/
+#content figure{
+    margin-bottom: 20px;
+}
+
+img{
+    width: 100%;
+}
+
+/***TEXTO***/
+#content article > p{
+    color: rgb(72, 72, 72);
+    text-align: justify;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+/***SIDEBAR***/
+#sidebar{
+    width: 280px;
+    padding: 20px;
+    margin-right: 11.5%;
+    background-color: white;
+    border: 1px solid rgb(106, 106, 106);
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px 2px black;
+    float: right;
+}
+
+/***WIDGETS***/
+.widget h4{
+    margin-bottom: 5px;
+}
+
+.widget ul > li{
+    border-top: 1px solid rgb(195, 195, 195);
+    padding: 5px 0;
+    color: gray;
+}
+
+/***FOOTER***/
+#footer{
+    padding: 15px 40px;
+    margin: 25px 10% 0 10%;
+    color: white;
+    clear: both;
+}
+
+
+
+
+

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Mapa de imagen</title>
+
+    <style type="text/css">
+        /*ESTABLECER LA FUENTE PARA TODO EL DOCUMENTO*/
+        body {
+            font-family: tahoma, arial, sans-serif;
+        }
+
+        /*CONTENEDOR PRINCIPAL DEL MAPA*/
+        #imap {
+            display: block;
+            width: 400px;
+            height: 240px;
+            background: url(beatles_basic.jpg);/*Imagen de fondo*/
+            position: relative;/*Habilitar el posicionamento de elementos en el contenedor*/
+        }
+
+        #imap a#title {
+            display: block;
+            width: 400px;
+            height: 0; /*ie6*/
+            padding-top: 240px;
+            overflow: hidden; /*Ocultar el contenido que sobresale del contenedor*/
+            position: absolute; /*Habilitar osicionamiento absoluto*/
+            left: 0;
+            top: 0;
+            background: transparent url(beatles_hover.jpg) no-repeat 400px 400px; /*Al hacer hover, se muestra la imagen con los cuadrados sobre la cara de cada integrante*/
+            cursor: default; /*Cambiar el cursor del mouse*/
+        }
+
+        /*COMPATIBILIDAD CON NAVEGADORES ANTIGUOS*/
+        * html #imap a#title {
+            height: 240px;
+            he\ight: 0; /*ie6*/
+        }
+
+
+        #imap a#title:hover {
+            background-position: 0 0;
+            z-index: 10;/*Establecer la capa de visualización*/
+        }
+
+        /*Establecer la posición de los elementos interactivos en el contenedor*/
+        #imap dd {
+            position: absolute;
+            padding: 0;
+            margin: 0;
+        }
+
+        /*PAUL*/
+        #imap #pic1 {
+            left: 36px;
+            top: 46px;
+            z-index: 20;
+        }
+
+        /*RINGO*/
+        #imap #pic2 {
+            left: 113px;
+            top: 76px;
+            z-index: 20;
+        }
+
+        /*JOHN*/
+        #imap #pic3 {
+            left: 192px;
+            top: 50px;
+            z-index: 20;
+        }
+
+        /*GEORGE*/
+        #imap #pic4 {
+            left: 262px;
+            top: 60px;
+            z-index: 20;
+        }
+
+        /*INTEGRANTES INDIVIDUALES*/
+        #imap a#paul,
+        #imap a#ringo,
+        #imap a#john,
+        #imap a#george {
+            display: block;
+            width: 85px;
+            height: 85px;
+            background: transparent url(hover.gif) -100px -100px no-repeat;/*Al pasar el ratón por encima de una de las caras, aparece solo el cuadrado de ese integrante en su cara.*/
+            text-decoration: none;
+            z-index: 20;
+        }
+
+        /*OCULTAR EL BLOQUE DE INFORMACION DE LOS INTEGRANTES*/
+        #imap a span,
+        #imap a:visited span {
+            display: none;
+        }
+
+        /*RESALTAR AREA*/
+        #imap a#paul:hover,
+        #imap a#ringo:hover,
+        #imap a#john:hover,
+        #imap a#george:hover {
+            background-position: 0 0;
+        }
+
+        /*MOSTRAR LA INFORMACION DE LOS INTEGRANTES AL HACER HOVER EN SU AREA*/
+        #imap a:hover span {
+            position: absolute;
+            width: 388px;
+            display: block;
+            font-family: arial;
+            font-size: 12px;
+            background: #fff;
+            color: #000;
+            border: 1px solid #000;
+            padding: 5px;
+        }
+
+        /*COMPATIBILIDAD CON NAVEGADORES ANTIGUOS*/
+        * html #imap a:hover span {
+            width: 400px;
+            w\idth: 388px;
+        }
+
+        /*Establecer la posición de los bloques de información de los integrantes*/
+        #imap a#paul:hover span {left: -36px; top: 200px;}
+        
+        #imap a#ringo:hover span {left: -113px; top: 170px;}
+
+        
+        #imap a#john:hover span {left: -192px; top: 196px;}
+
+        #imap a#george:hover span {left: -262px; top: 186px;}
+
+        #imap a span:first-line {
+            font-weight: bold;
+            font-style: italic; /*Establecer el estilo del "titulo"*/
+        }
+
+        #ads {
+            margin-top: 150px; /*Separar el contenido del mapa de imagen*/
+        }
+    </style>
+</head>
+
+<body>
+    <h2>THE BEATLES</h2>
+    <h2>Un mapa de imagen.</h2>
+    <dl id="imap">
+        <dt><a id="title" href="#nogo" title="The Beatles">The Beatles</a></dt>
+        <dd id="pic1"><a id="paul" title="Paul McCartney" href="#nogo"><span>Paul McCartney - Bajo y
+                    voz<br /><br />McCartney figura en el Libro Guinness de los r�cords como el �m�sico y compositor m�s
+                    exitoso en la historia de la m�sica popular�, con 60 discos de oro y ventas de 100 millones de
+                    sencillos en el Reino Unido.</span></a></dd>
+        <dd id="pic2"><a id="ringo" title="Ringo Starr" href="#nogo"><span>Ringo Starr - Bater�a<br /><br />En agosto de
+                    1962, Starr sustituy� de forma permanente en la formaci�n de The Beatles al baterista Pete Best.
+                    Adem�s de tocar la bater�a, Starr particip� como vocalista en varias canciones del grupo como "With
+                    a Little Help from My Friends".</span></a></dd>
+        <dd id="pic3"><a id="john" title="John Lennon" href="#nogo"><span>John Lennon - Guitarra y
+                    voz<br /><br />Demostr� un car�cter rebelde y un ingenio mordaz en la m�sica, el cine, la literatura
+                    y el dibujo, as� como en sus declaraciones en conferencias de prensa y entrevistas. Adem�s, la
+                    pol�mica le persigui� debido a su constante activismo por la paz, junto con su esposa Yoko Ono.
+        <dd id="pic4"><a id="george" title="George Harrison" href="#nogo"><span>George Harrison - Guitarra y
+                    voz<br /><br />En 1965, fue pionero en introducir m�sica hind� en occidente a trav�s de instrumentos
+                    como el sitar, que toc� en canciones como �Norwegian Wood (This Bird Has Flown)�.</span></a></dd>
+    </dl>
+
+</body>
+
+</html>
